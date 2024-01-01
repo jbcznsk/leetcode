@@ -12,9 +12,9 @@ int* mapping(char * input) {
     return map;
 }
 
-bool canConstruct(char* ransomNote, char* magazine) {
-    int *a = mapping(ransomNote);
-    int *b = mapping(magazine);
+bool isAnagram(char* s, char* t) {
+    int *a = mapping(s);
+    int *b = mapping(t);
     bool res = true;
     for (int i = 0; i < 26; ++i) {
         if (b[i]-a[i] != 0) {
@@ -25,8 +25,4 @@ bool canConstruct(char* ransomNote, char* magazine) {
     free(a);
     free(b);
     return res;
-}
-
-int main(void) {
-    return 0;    
 }
